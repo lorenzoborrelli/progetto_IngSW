@@ -56,13 +56,13 @@ public class Querys {
 	public static User checkCredentials(String email, String psw){
 		Encryption enc = new Encryption();
 		psw = enc.getHash(psw);
-		String query = "SELECT id,name,surname,email FROM User WHERE email LIKE \""+email+"\" AND password = \""+psw+"\";";
+		String query = "SELECT id,name,surname,email,type FROM User WHERE email LIKE \""+email+"\" AND password = \""+psw+"\";";
 		try {
 			ResultSet rs = db.executeQuery(query);
 			if(rs.getFetchSize() == 0){
 				return null;
 			}
-			User u = new User(rs.getInt("id"), rs.getString("name"), rs.getString("surname"), email);
+			User u = new User(rs.getInt("id"), rs.getString("name"), rs.getString("surname"), email, rs.getInt("type"));
 			return u;
 		} catch (SQLException e) {
 			e.printStackTrace();
