@@ -5,9 +5,17 @@ public class CheckLogin {		// gestore della pagina di login
 		
 	}
 	
-	public static checkCredentials(String email, String psw){
-		if( Querys.checkCredentials(email, psw) ){
-			
+	public static boolean checkCredentials(String email, String psw){
+		User u;
+		if( (u = Querys.checkCredentials(email, psw)) != null ){
+			new userLogged(u);
+			return true;
+		}
+		else {
+			return false;
 		}
 	}
 }
+
+
+

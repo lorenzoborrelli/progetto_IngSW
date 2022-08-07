@@ -7,8 +7,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import application.Log;
-import auditing.LogElement;
-import auditing.LogHistory;
 
 /**
  * Questa classe mette a disposizione i metodi per gestire la connessione con il DB

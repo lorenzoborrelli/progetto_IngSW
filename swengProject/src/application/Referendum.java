@@ -7,6 +7,6 @@ public class Referendum extends Session{
 	
 	public String toString(){
 		String s = "";
-		
+		return s;
 	}
 }
