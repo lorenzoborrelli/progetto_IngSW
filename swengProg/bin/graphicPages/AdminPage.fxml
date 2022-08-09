@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="710.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pages.AdminPage">
+   <children>
+      <Label layoutX="30.0" layoutY="14.0" text="Admin">
+         <font>
+            <Font size="31.0" />
+         </font>
+      </Label>
+      <ListView fx:id="sessionFList" layoutX="30.0" layoutY="107.0" onMouseClicked="#sessionFClicked" prefHeight="231.0" prefWidth="246.0" />
+      <ListView fx:id="sessionCList" layoutX="315.0" layoutY="107.0" onMouseClicked="#sessionCClicked" prefHeight="231.0" prefWidth="236.0" />
+      <Label layoutX="30.0" layoutY="90.0" text="Lista partiti" />
+      <Label layoutX="315.0" layoutY="90.0" text="Lista candidati" />
+      <Label layoutX="30.0" layoutY="357.0" text="Aggiungi partito" />
+      <Label layoutX="315.0" layoutY="357.0" text="Aggiungi candidato (seleziona un partito)" />
+      <Button fx:id="addFButton" layoutX="203.0" layoutY="387.0" mnemonicParsing="false" onMouseClicked="#addFClicked" text="AGGIUNGI" />
+      <Button fx:id="addCButton" layoutX="478.0" layoutY="387.0" mnemonicParsing="false" onMouseClicked="#addCClicked" text="AGGIUNGI" />
+      <TextField fx:id="addFName" layoutX="28.0" layoutY="387.0" />
+      <TextField fx:id="addCName" layoutX="315.0" layoutY="387.0" />
+      <TextField fx:id="addCSurname" layoutX="317.0" layoutY="429.0" />
+      <Separator layoutX="294.0" layoutY="99.0" orientation="VERTICAL" prefHeight="351.0" prefWidth="6.0" />
+      <Label layoutX="-238.0" layoutY="379.0" text="Label" />
+      <Label layoutX="28.0" layoutY="492.0" text="Crea votazione (Seleziona in alto i partiti da includere)" />
+      <RadioButton fx:id="rb1" layoutX="32.0" layoutY="530.0" mnemonicParsing="false" selected="true" text="Ordinale">
+         <toggleGroup>
+            <ToggleGroup fx:id="vot" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="rb2" layoutX="177.0" layoutY="530.0" mnemonicParsing="false" text="Categorica" toggleGroup="$vot" />
+      <RadioButton fx:id="rb3" layoutX="315.0" layoutY="516.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="104.0" text="Categorica con preferenza" toggleGroup="$vot" wrapText="true" />
+      <RadioButton fx:id="rb4" layoutX="472.0" layoutY="530.0" mnemonicParsing="false" text="Referendum" toggleGroup="$vot" />
+      <Button layoutX="278.0" layoutY="662.0" mnemonicParsing="false" onMouseClicked="#addVotClicked" text="Crea" />
+      <Separator layoutX="27.0" layoutY="473.0" prefHeight="5.0" prefWidth="543.0" />
+      <TextField fx:id="nomeVotazione" layoutX="88.0" layoutY="628.0" prefHeight="25.0" prefWidth="414.0" />
+      <Label layoutX="86.0" layoutY="611.0" text="Nome o descrizione" />
+      <Button fx:id="logoutButton" layoutX="501.0" layoutY="25.0" mnemonicParsing="false" onMouseClicked="#logoutClicked" text="Logout" />
+      <Button layoutX="374.0" layoutY="25.0" mnemonicParsing="false" onMouseClicked="#viewSessionsClicked" text="View Sessions" />
+      <Button layoutX="256.0" layoutY="25.0" mnemonicParsing="false" onMouseClicked="#registrationClicked" text="Registrazione" />
+      <RadioButton fx:id="quorumSi" layoutX="246.0" layoutY="587.0" mnemonicParsing="false" text="SI">
+         <toggleGroup>
+            <ToggleGroup fx:id="quorum" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="quorumNo" layoutX="312.0" layoutY="587.0" mnemonicParsing="false" selected="true" text="NO" toggleGroup="$quorum" />
+      <Label layoutX="268.0" layoutY="562.0" text="QUORUM" />
+   </children>
+</AnchorPane>
